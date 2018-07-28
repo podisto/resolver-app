@@ -13,4 +13,8 @@ export class PostService {
   getPosts() {
     return this.http.get<Post[]>(this.apiUrl).pipe(map(response => response));
   }
+
+  getPost(id: number) {
+    return this.http.get<Post>(`${this.apiUrl}/${id}`).pipe(map(data => data));
+  }
 }
